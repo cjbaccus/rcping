@@ -1,0 +1,50 @@
+rcping (cping-rs) - Concurrent Ping / Traceroute TUI
+Copyright (C) 2026 Carl Baccus
+
+This software is a Rust port of cping version 2.4.0
+
+Original Author: Willem A. Schreuder (AC0KQ)
+Original Software: cping (Concurrent Ping)
+Original Version: 2.4.0
+Original License: GNU General Public License version 2
+
+Rust Port Author: Carl Baccus
+Rust Port License: GNU General Public License version 2
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+================================================================================
+
+ATTRIBUTION
+
+This Rust implementation is a faithful port of the original C program,
+maintaining compatibility with the original's configuration files, command-line
+interface, and behavior. The modular structure in Rust mirrors the functional
+organization of the original cping.c.
+
+Module Mapping:
+- main.rs      → Main event loop and initialization
+- ping.rs      → Ping/Stat structures and ByteTime encoding
+- icmp.rs      → ICMP packet handling and checksums
+- dnscache.rs  → DNS resolution and caching
+- config.rs    → Configuration file parser and options
+- app.rs       → Application state management
+- net.rs       → Network sockets and send/receive threads
+- ui.rs        → TUI rendering (replaces ncurses with ratatui)
+- output.rs    → Log file writing
+- gpio.rs      → Raspberry Pi GPIO support (optional)
+
+All credit for the original design, algorithms, and functionality goes to
+Willem A. Schreuder.
