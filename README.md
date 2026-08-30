@@ -1,4 +1,4 @@
-# cping-rs
+# rcping
 
 A Rust port of **cping** (Concurrent Ping) by Willem A. Schreuder (AC0KQ),
 originally a single-file C program (`../cping.c`, v2.4.0). Released under the
@@ -15,17 +15,17 @@ make            # cargo build --release
 make test
 ```
 
-The binary is `target/release/cping-rs`.
+The binary is `target/release/rcping`.
 
 ### Installing
 
 ```
-sudo make install                              # -> /usr/local/sbin/cping-rs
+sudo make install                              # -> /usr/local/sbin/rcping
 sudo make install INSTDIR=/usr/local/bin NAME=cping
 ```
 
 `make install` copies the release binary to `$(INSTDIR)` (default
-`/usr/local/sbin`, name `cping-rs`) and grants it the raw-socket privilege:
+`/usr/local/sbin`, name `rcping`) and grants it the raw-socket privilege:
 `setcap cap_net_raw=ep` on Linux, setuid root on macOS. `make uninstall` removes
 it. `make help` lists every knob.
 
@@ -43,12 +43,12 @@ cargo build --release --features gpio
 Raw ICMP sockets need privilege, exactly as with the C version:
 
 - **Linux:** run as root, or grant the capability once:
-  `sudo setcap cap_net_raw=ep target/release/cping-rs`
+  `sudo setcap cap_net_raw=ep target/release/rcping`
   (add `cap_sys_rawio,cap_dac_override` as well when built with `--features gpio`).
 - **macOS:** run with `sudo`.
 
 ```
-cping-rs [-f cfg] [-o log] [-banrtxSv] [-p us] [-s sec] [-m size] [-N count] [-c ch]
+rcping [-f cfg] [-o log] [-banrtxSv] [-p us] [-s sec] [-m size] [-N count] [-c ch]
 ```
 
 Configuration file, command-line flags and key bindings are unchanged from the
