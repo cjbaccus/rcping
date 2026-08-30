@@ -7,6 +7,7 @@ Original Author: Willem A. Schreuder (AC0KQ)
 Original Software: cping (Concurrent Ping)
 Original Version: 2.4.0
 Original License: GNU General Public License version 2
+Original URL: https://www.prinmath.com/ham/cping.zip
 
 Rust Port Author: Carl Baccus
 Rust Port License: GNU General Public License version 2
@@ -47,4 +48,4 @@ Module Mapping:
 - gpio.rs      → Raspberry Pi GPIO support (optional)
 
 All credit for the original design, algorithms, and functionality goes to
-Willem A. Schreuder.
+Willem A. Schreuder. https://www.prinmath.com/ham/cping.zip
